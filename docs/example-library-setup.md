@@ -64,7 +64,7 @@ Perfect! Setting up the library and starting footage analysis...
 ```
 
 ### Step 2: Audio Transcription (Parallel Processing)
-Claude launches 10 parallel agents, each handling one video:
+Claude launches 4 parallel agents, each handling one video:
 
 ```
 Agent 1: Transcribing MVI_0307.MP4...
