@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe 'VideoMetadata' do
-  let(:video_path) { '/Users/andrew/code/buttercut/media/MVI_0323_720p.mov' }
+  let(:video_path) { File.expand_path('./fixtures/media/MVI_0323_720p.mov', __dir__) }
 
   describe 'metadata extraction' do
     let(:generator) { ButterCut.new([{ path: video_path }], editor: :fcpx) }

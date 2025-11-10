@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe ButterCut do
-  let(:video_file_path) { '/Users/andrew/code/buttercut/media/MVI_0323_720p.mov' }
+  let(:video_file_path) { File.expand_path('./fixtures/media/MVI_0323_720p.mov', __dir__) }
   let(:clips) { [{ path: video_file_path }] }
 
   describe '.new factory method' do

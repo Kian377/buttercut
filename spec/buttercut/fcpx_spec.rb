@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe ButterCut::FCPX do
-  let(:video_file_path) { '/Users/andrew/code/buttercut/media/MVI_0323_720p.mov' }
+  let(:video_file_path) { File.expand_path('../fixtures/media/MVI_0323_720p.mov', __dir__) }
   let(:clips) { [{ path: video_file_path }] }
-  let(:gh5_video_path) { File.expand_path('../../media/P1044376_timecode_fixture.mov', __dir__) }
+  let(:gh5_video_path) { File.expand_path('../fixtures/media/P1044376_timecode_fixture.mov', __dir__) }
 
   def build_metadata(frame_rate:, duration_seconds:, width: 1280, height: 720, sample_rate: '48000', timecode: nil)
     video_stream = {
