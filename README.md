@@ -12,19 +12,78 @@ ButterCut, the Ruby Gem, takes these clips with timings and builds XML.
 With both, you can get a whole rough cut going. It's fun and makes editing feel a bit like how we've been programming lately.
 
 ## Requirements
-- Ruby (file massaging scripts)
-- FFmpeg (Video frame and metadata extraction)
-- WhisperX (Transcribe footage with word level timing)
-- Python (WhisperX)
+- Ruby 3.3.6 (file massaging scripts)
+- Python 3.12.8 (WhisperX)
+- FFmpeg (video frame and metadata extraction)
+- WhisperX (transcribe footage with word level timing)
+- mise (version manager)
 - Claude Code (though you could probably shove this into Codex too)
 
 ## Installation
 
-For local development:
+**Note:** Claude can probably handle all of this for you.
+Use Claude Code's built-in installation check:
+```plaintext
+You: "Check if my installation is set up correctly"
+Claude: [Runs installation-check skill to verify dependencies]
+```
+
+### Prerequisites
+
+1. **Install mise** (if not already installed):
+   ```bash
+   curl https://mise.run | sh
+   # Or with Homebrew:
+   brew install mise
+   ```
+
+2. **Install FFmpeg**:
+   ```bash
+   brew install ffmpeg
+   ```
+
+### Setup Steps
+
+1. **Navigate to the project directory**:
+   ```bash
+   cd buttercut
+   ```
+
+2. **Install Ruby and Python** (mise reads `.mise.toml` automatically):
+   ```bash
+   mise install
+   ```
+
+   This installs:
+   - Ruby 3.3.6
+   - Python 3.12.8
+
+3. **Install Ruby dependencies**:
+   ```bash
+   bundle install
+   ```
+
+4. **Install Python dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Verify Installation
+
+You can verify everything is set up correctly:
 
 ```bash
-cd buttercut
-bundle install
+# Check Ruby version
+ruby --version  # Should show: ruby 3.3.6
+
+# Check Python version
+python --version  # Should show: Python 3.12.8
+
+# Check FFmpeg
+ffmpeg -version
+
+# Check WhisperX
+whisperx --help
 ```
 
 ## Supported Editors
