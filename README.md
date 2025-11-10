@@ -128,6 +128,40 @@ Result: Full footage analysis ready for rough cut creation
 
 Claude handles the parallel processing, metadata extraction, and transcript generation. See the [full walkthrough](docs/example-library-setup.md) for a detailed example of me setting up a library from my wedding footage.
 
+### Creating a Roughcut
+
+Once your library is analyzed, Claude can create rough cuts through an interactive conversation:
+
+```plaintext
+You: "Let's create a new roughcut"
+
+Claude: [Loads roughcut skill and analyzes footage]
+        What should this roughcut focus on?
+        - Full story
+        - Just the meetup coverage
+        - Short teaser sequence
+
+You: "Just the meetup coverage"
+
+Claude: [Asks 3 preference questions]
+        - Narrative structure? (chronological, thematic, hook-based)
+        - Target duration? (1-2 min, 3-5 min, 6-10 min)
+        - Pacing style? (fast & punchy, conversational, cinematic)
+
+You: "Start with presentations (5 sec clips), then interviews,
+      then my closing reflection. 3-5 minutes, conversational pacing."
+
+Claude: [Creates roughcut with editorial decisions]
+        ✓ Combined visual transcripts
+        ✓ Selected 29 clips (4:32 total)
+        ✓ Exported to FCPXML
+
+Result: Ready-to-import Final Cut Pro timeline at:
+        libraries/[library]/roughcuts/[name]_[datetime].fcpxml
+```
+
+Claude makes editorial decisions based on transcript analysis and your preferences, creating a structured YAML roughcut. The roughcut is then exported for your editor using the Ruby library.
+
 ### Basic XML Generation
 
 ```ruby
