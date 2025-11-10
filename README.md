@@ -33,6 +33,31 @@ bundle install
 
 ## Usage
 
+### Quick Start: Adding a Video Library
+
+Want to analyze footage with Claude Code? Here's the basic workflow:
+
+```plaintext
+You: "I want to build a new library"
+
+Claude: [Launches library skill and asks for details]
+
+You:
+  - Library name: "wedding"
+  - Video location: "/path/to/videos"
+  - Language: "English"
+
+Claude: [Automatically processes all videos]
+  ✓ Creates library structure
+  ✓ Transcribes audio with WhisperX
+  ✓ Analyzes video frames
+  ✓ Generates visual transcripts
+
+Result: Full footage analysis ready for rough cut creation
+```
+
+Claude handles the parallel processing, metadata extraction, and transcript generation. See the [full walkthrough](docs/example-library-setup.md) for a detailed example of me setting up a library from my wedding footage.
+
 ### Basic XML Generation
 
 ```ruby
@@ -42,7 +67,7 @@ require 'buttercut'
 videos = [
   { path: '/path/to/video1.mp4', duration: 3.0 },
   { path: '/path/to/video2.mp4', duration: 3.0, start_at: 30.0 },
-  { path: '/path/to/video3.mp4', duration: 3.0 start_at: 2.0 }
+  { path: '/path/to/video3.mp4', duration: 3.0, start_at: 2.0 }
 ]
 
 # Final Cut Pro X timeline
