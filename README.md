@@ -1,6 +1,10 @@
 # ButterCut
 
-![Very real butter dish](very-real-butter-dish.jpg)
+### Watch the Demo
+
+[![Watch ButterCut Demo on YouTube](https://img.youtube.com/vi/C3oMpyo8huQ/0.jpg)](https://www.youtube.com/watch?v=C3oMpyo8huQ)
+
+*Click to watch the ButterCut demo on YouTube*
 
 ## Edit video with Claude Code
 ButterCut analyzes footage and builds roughcuts or sequences for Final Cut Pro and Adobe Premiere.
