@@ -1,11 +1,13 @@
 ---
 name: roughcut
-description: Creates video rough cut yaml file for use with Buttercut gem. Concatenates visual transcripts with file markers, creates a roughcut yaml with clip selections, then exports to XML format.
+description: Creates video rough cut yaml file for use with Buttercut gem. Concatenates visual transcripts with file markers, creates a roughcut yaml with clip selections, then exports to XML format. Use this skill when users want a "roughcut", "sequence" or "scene" generated. These are all the same thing, just with different lengths.
 ---
 
 # Skill: Create Rough Cut
 
 This skill handles the editorial process of creating rough cut timeline scripts from transcribed video footage. It analyzes transcripts, makes editorial decisions, outputs a structured YAML rough cut, and exports it to Final Cut Pro XML format.
+
+**Note:** This skill is used for both full-length rough cuts (3-15+ minutes) and short sequences (30-60 seconds). When the user asks for a "sequence", use this skill with a target duration of 30-60 seconds.
 
 ## Prerequisites
 
@@ -16,6 +18,10 @@ This skill handles the editorial process of creating rough cut timeline scripts 
 
 ### Project Context
 - Read `libraries/[library-name]/library.yaml` for footage overview and metadata
+
+## Rough Cuts vs Sequences
+
+This skill creates both full-length rough cuts (3-15+ minutes) and short sequences (30-60 seconds for social media/teasers). When creating sequences, prioritize impact over completeness with fast-paced editing and ruthless cuts to stay within the 60-second maximum.
 
 ## Implementation Steps
 
