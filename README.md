@@ -1,36 +1,21 @@
 # ButterCut
-## Claude Code rough cut and sequence editor
-ButterCut builds rough cuts and sequences for Final Cut Pro. (I have an initial go at adding support for Adobe Premiere through Final Cut Pro 7 files. But it's well-tested at the moment.) Two pieces work together to make this go. The first is ButterCut, The Ruby Gem. The gem takes an array of clips and then builds XML for your video editor. The second piece is several Claude Code Skills that together can analyze and index your video and then be used to create simple sequential video cuts in yaml.
+## Edit video with Claude Code
+ButterCut analyzes footage and builds rough cuts and sequences for Final Cut Pro and Adobe Premiere. Two pieces work together to make this go: ButterCut, The Ruby gem. And ButterCut, a bunch of Claude Code Skills.
 
-With both, you can get a whole rough cut going. It's fun and makes editing feel a bit like how we've been programming the past year.
+Claude Code Skills can analyze and index your videos. These are done through **Libraries**. After all video is analyzed, it can build a narrative and save it as rough cut yaml file.
 
-## Features
+ButterCut, the Ruby Gem, takes these clips with timings and builds XML.
 
-- **XML Generation**: Create FCPXML and FCP7/Premiere XML from video file paths
-- **Automatic Metadata Extraction**: Uses FFmpeg to extract video properties (duration, resolution, frame rate, audio rate, etc.)
-- **AI-Powered Workflow**: Includes Claude Code skills for transcription, visual analysis, and rough cut creation
-- **Library Management**: Organize video projects into libraries with persistent memory
-- **No Manual Configuration**: Just provide file paths and get working XML
+With both, you can get a whole rough cut going. It's fun and makes editing feel a bit like how we've been programming lately.
 
 ## Requirements
-
-- Ruby >= 2.7.0
-- FFmpeg (for metadata extraction)
-- WhisperX (optional, for audio transcription)
+- Ruby (file massaging scripts)
+- FFmpeg (Video frame and metadata extraction)
+- WhisperX (Transcribe footage with word level timing)
+- Python (WhisperX)
+- Claude Code (though you could probably shove this into Codex too)
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'buttercut'
-```
-
-Or install it yourself as:
-
-```bash
-gem install buttercut
-```
 
 For local development:
 
@@ -56,8 +41,8 @@ require 'buttercut'
 # Create a 3-clip timeline with 3 seconds from each video
 videos = [
   { path: '/path/to/video1.mp4', duration: 3.0 },
-  { path: '/path/to/video2.mp4', duration: 3.0 },
-  { path: '/path/to/video3.mp4', duration: 3.0 }
+  { path: '/path/to/video2.mp4', duration: 3.0, start_at: 30.0 },
+  { path: '/path/to/video3.mp4', duration: 3.0 start_at: 2.0 }
 ]
 
 # Final Cut Pro X timeline
@@ -65,6 +50,7 @@ fcpx_generator = ButterCut.new(videos, editor: :fcpx)
 fcpx_generator.save('timeline.fcpxml')
 
 # Final Cut Pro 7 / Adobe Premiere timeline
+# This opened up correctly for me, but this isn't really tested yet.
 fcp7_generator = ButterCut.new(videos, editor: :fcp7)
 fcp7_generator.save('timeline.xml')
 ```
@@ -85,7 +71,7 @@ Each clip in the array is a hash with the following keys:
   - If not specified and `start_at` is provided, uses remaining video after trim
   - Automatically rounded to nearest frame boundary for precision
 
-### AI-Powered Workflow with Claude Code
+### Roughcut Workflow with Claude Code
 
 ButterCut includes Claude Code skills for intelligent video editing:
 
@@ -116,16 +102,6 @@ Validate FCPXML files against the DTD specification:
 ```bash
 xmllint --dtdvalid "dtd/FCPXMLv1_8.dtd" "path/to/your/file.fcpxml"
 ```
-
-## Design Philosophy
-
-ButterCut is designed to be simple and automatic:
-- **Input**: Array of full file paths to video files
-- **Output**: Working FCPXML ready to import into Final Cut Pro
-- **Automatic Metadata Extraction**: Uses FFmpeg internally to extract video properties
-- **No Manual Configuration Required**: Library handles all the complexity of FCPXML generation
-
-The user should not need to understand video codecs, frame rates, or FCPXML structure - just provide file paths and get working XML.
 
 ## License
 
