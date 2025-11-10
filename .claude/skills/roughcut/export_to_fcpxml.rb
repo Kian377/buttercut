@@ -89,8 +89,8 @@ def main
     puts "Successfully exported to #{output_path}"
   RUBY
 
-  # Execute the Ruby code
-  system("ruby", "-e", ruby_code)
+  # Execute the Ruby code with lib path
+  system("ruby", "-I", File.join(__dir__, "../../../lib"), "-e", ruby_code)
 
   if $?.success?
     puts "\n✓ Rough cut exported to: #{output_path}"
