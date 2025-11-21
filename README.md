@@ -9,9 +9,9 @@
 ## Edit video with Claude Code
 ButterCut analyzes footage and builds roughcuts or sequences for Final Cut Pro, Adobe Premiere, and DaVinci Resolve.
 
-Two pieces work together to make this go: ButterCut, The Ruby gem. And ButterCut, the Claude Code Skills.
+Two pieces work together to make this go: ButterCut, The Ruby gem. And ButterCut, the Claude Code integration.
 
-The Skills (library, transcribe-audio, analyze-video, and roughcut) analyze and index your videos. These are done through **Libraries** which contain paths to your footage, json audio transcripts, 'visual' transcripts and some state in library.yaml. After transcripts are generated, the skills can build a narrative by reading visual trancripts and then creating a yaml rough cut.
+Claude Code guides you through **Libraries** (video projects) which contain paths to your footage, json audio transcripts, 'visual' transcripts and some state in library.yaml. The Skills (transcribe-audio, analyze-video, and roughcut) analyze and index your videos. After transcripts are generated, Claude can build a narrative by reading visual transcripts and then creating a yaml rough cut.
 
 ButterCut, the Ruby Gem, takes these clips with timings and builds XML.
 
@@ -110,7 +110,7 @@ Want to analyze footage with Claude Code? Here's the basic workflow:
 ```plaintext
 You: "I want to build a new library"
 
-Claude: [Launches library skill and asks for details]
+Claude: [Guides you through library setup and asks for details]
 
 You:
   - Library name: "wedding"
@@ -208,12 +208,12 @@ Each clip in the array is a hash with the following keys:
 
 ### Roughcut Workflow with Claude Code
 
-ButterCut includes Claude Code skills for intelligent video editing:
+ButterCut integrates with Claude Code for intelligent video editing:
 
-1. **Library Management** - Organize video projects
-2. **Audio Transcription** - WhisperX integration for word-level timing
-3. **Visual Analysis** - Frame extraction and AI analysis
-4. **Rough Cut Creation** - AI-generated rough cuts based on transcripts
+1. **Library Management** - Organize video projects (integrated workflow)
+2. **Audio Transcription** - WhisperX integration for word-level timing (`transcribe-audio` skill)
+3. **Visual Analysis** - Frame extraction and AI analysis (`analyze-video` skill)
+4. **Rough Cut Creation** - AI-generated rough cuts based on transcripts (`roughcut` skill)
 
 See `CLAUDE.md` for detailed workflow documentation.
 
