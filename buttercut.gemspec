@@ -1,6 +1,8 @@
+require_relative "lib/buttercut/version"
+
 Gem::Specification.new do |spec|
   spec.name          = "buttercut"
-  spec.version       = "0.1.0"
+  spec.version       = ButterCut::VERSION
   spec.authors       = ["Andrew Ford"]
   spec.email         = ["ford.andrewid@gmail.com"]
 
