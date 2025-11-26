@@ -5,6 +5,23 @@ All notable changes to ButterCut will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2025-11-25
+
+### Added
+- **backup-library skill**: Creates compressed ZIP backups of libraries (transcripts, roughcuts, YAML - not video files)
+- **update-buttercut skill**: Automatically downloads and installs the latest version while preserving libraries
+- **Flexible setup options**: Simple mise-based install for beginners, advanced checklist for developers
+- `.ruby-version` and `.python-version` files for broad version manager support (rbenv, pyenv, asdf, etc.)
+- Install location check to warn about problematic directories
+- Manual installation documentation at `docs/installation.md`
+
+### Changed
+- Restructured setup skill with separate `simple-setup.md` and `advanced-setup.md` guides
+- Moved roughcut generation to subtask for streamlined workflow
+- Improved Homebrew installation messaging (needs interactive terminal for password prompts)
+- Added libyaml dependency to prevent psych extension build failures
+- Added note about Ruby compilation time (5-10 minutes via mise)
+
 ## [0.1.1] - 2025-01-21
 
 ### Added
