@@ -12,7 +12,7 @@ Combine all visual transcripts into a single JSON file:
 ./.claude/skills/roughcut/combine_visual_transcripts.rb [library-name] [roughcut_name]
 ```
 
-This outputs to `/tmp/[library-name]/[roughcut_name]_combined_visual_transcript.json` with format:
+This outputs to `tmp/[library-name]/[roughcut_name]_combined_visual_transcript.json` with format:
 ```json
 [
   {

@@ -20,7 +20,7 @@ if visual_files.empty?
 end
 
 # Concatenate all visual transcripts with newlines
-output_dir = "/tmp/#{library_name}"
+output_dir = "tmp/#{library_name}"
 FileUtils.mkdir_p(output_dir)
 output_file = "#{output_dir}/#{roughcut_name}_combined_visual_transcript.json"
 
